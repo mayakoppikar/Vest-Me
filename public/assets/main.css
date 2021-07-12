@@ -1,0 +1,96 @@
+body {
+  background-color: #000;
+}
+
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+#landing-header h1 {
+  color: #fff;
+}
+
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#heady{
+	color:black;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+
+
+.slideshow li:nth-child(1) { 
+  background-image: url(https://c1.sfdcstatic.com/content/dam/blogs/legacy/2014/09/6a00e54ee3905b883301a73e09fe07970.jpg) 
+}
+.slideshow li:nth-child(2) { 
+  background-image: url(https://www.sogoodlanguages.com/wp-content/uploads/2015/07/Meeting.jpg);
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url(https://media.istockphoto.com/photos/group-of-people-thumbs-up-blue-skycopy-space-picture-id185309372?k=6&m=185309372&s=170667a&w=0&h=iMOyQoOob0wYug4T6TXJwT8LGPsjwCiFstZMAZvwt7s=);
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f5/Photos_NewYork1_032.jpg);
+  animation-delay: 40s; 
+}
+
+
+
+
+
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}
