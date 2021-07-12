@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vest-Me</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+		<link rel="shortcut icon" type="image/png" href="https://www.netclipart.com/pp/m/0-575_floral-watercolor-		png-watercolor-flower-png-pink.png">
+		
+		<link href= "/public/assets/styles.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="/public/assets/main.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+		<html lang="en">
+<!-- metadata -->
+		<meta charset="utf-8"/>
+
+		<meta name= description content="Site made to help guide newcomers to finance and investing with a smiple, 		   hands-on scenarios that models the real world!"/> 
+
+		<meta name="keywords" content="finance,student,growth, invest, smart "/>
+			
+		<meta name="author" content="Maya Koppikar" />
+			
+		<meta http-equiv="refresh" content="30">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+ <body>
+    
+    <div class="container">
+        <% if(error && error.length > 0){ %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>
+        <% if(success && success.length > 0){ %>
+            <div class="alert alert-success" role="alert">
+                <%= success %>
+            </div>
+        <% } %>
+    </div>
+    
+    <div id="landing-header">
+ 		<h1 id = "heady">Welcome to Vest-Me!</h1>
+		<a href="/main" class="btn btn-lg btn-success">Launch!</a>
+		
+	
+		
+		
+    </div>
+    
+    <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+
+
+
+
+</body>
+	
+</html>
+
