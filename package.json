@@ -1,0 +1,49 @@
+{
+  "name": "vestme",
+  "version": "1.0.0",
+  "description": "Guiding newcomers to finance with a fun hands-on approach",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+	 "engines": {
+    "node": "10.16.3",
+    "npm": "6.14.7"
+  },
+  "keywords": [
+    "finance",
+    "help",
+    "student",
+    "invest"
+  ],
+  "author": "Maya Koppikar",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "email-existence": "^0.1.6",
+    "express": "^4.17.1",
+    "express-sanitizer": "^1.0.5",
+    "express-session": "^1.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.10",
+    "nightmare": "^3.0.2",
+    "nodemailer": "^6.4.14",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^6.0.1",
+    "puppeteer": "^5.4.0",
+    "puppeteer-extra": "^3.1.13",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "superagent": "^6.1.0",
+    "yfinance": "0.0.6"
+  }
+}
