@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Vest-Me | LEARN</title>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 							crossorigin="anonymous">
+	
+		<link rel="shortcut icon" type="image/png" href="https://www.netclipart.com/pp/m/0-575_floral-watercolor-		png-watercolor-flower-png-pink.png">
+		
+		<link href= "/public/assets/styles.css" rel="stylesheet" type="text/css"/>
+		
+		<html lang="en">
+<!-- metadata -->
+		<meta charset="utf-8"/>
+
+		<meta name= description content="Site made to help guide newcomers to finance and investing with a smiple, 		   hands-on scenarios that models the real world!"/> 
+
+		<meta name="keywords" content="finance,student,growth, invest, smart "/>
+			
+		<meta name="author" content="Maya Koppikar" />
+			
+		<meta http-equiv="refresh" content="30">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				
+				
+</head>
+	
+<body class="bod">
+	
+		
+<!-- nabvar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light navy" id = "heyy">
+		<a  class="navbar-brand"  >
+  		<img src="https://www.netclipart.com/pp/m/0-575_floral-watercolor-png-watercolor-flower-png-pink.png" 			width="30" height="30" alt="" loading="lazy">Vest-Me</a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+   	   		<ul class="navbar-nav mr-auto">
+      			<li class="nav-item ">
+       				<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      			</li>
+
+      			<li class="nav-item">
+       				<a class="nav-link" href="/about">About</a>
+     			 </li>
+
+     			 <li class="nav-item">
+       			 	<a class="nav-link" href="/learn">Learn</a>
+      			 </li>
+
+				
+				
+
+				<% if(!currentUser){ %>
+
+				 <li id = "signup" class="nav-item">
+        			<a class="nav-link" href="/register">Sign Up</a>
+      			 </li>
+
+				 <li class="nav-item">
+       				<a class="nav-link" href="/login">Login</a>
+      			 </li>
+				<% } else { %>
+				<li id="messa">Signed In As <%= currentUser.username%></li>
+				
+				<li id = "herro" class="nav-item">
+       			<a class="nav-link" href="/mainpage">Mainpage</a>
+      			 </li>
+				
+				
+				
+				<li id = "signout" class="nav-item">
+       				<a class="nav-link" href="/logout">Sign Out</a>
+      			 </li>
+
+				<% } %>
+				
+	
+			</ul>
+			</ul>
+  		</div>
+	</nav>
+	
+		
+	<div class="errorsuccess container">
+
+	<% if(error && error.length > 0){  %>
+					<div class= "alert alert-danger" role="alert">
+					<%= error %>
+						</div>
+	
+	 <% }  %>
+	
+	<% if(success && success.length > 0){  %>
+					<div class= "alert alert-success" role="alert">
+					<%= success %>
+					</div>
+	
+	 <% }  %>
+	
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+		
+
+
+<div >
+	
+
+
+
+	<h4 id = "fintitle">Finance & Investing In A Nutshell: </h4>
+<div class="container">
+	<ul id = "explam"><li id = "listy">Hello! Please use the following material as as guide as you invest. You can refer here whenever you need help, or read through if you're looking to learn more about finance in general. Happy Learning!</li></ul>
+
+	</div>
+
+
+	<!-- underline  -->
+	<p id = "bo">__________________________________________________________________________________________________________________________________________</p>
+
+ 
+
+  <!-- <form id = "searchbar" class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- <script type="text/javascript">
+    document.getElementById("searchbar").onsubmit = function() {
+        window.location = 'http://www.google.com/search?q=site:yoursitename.com ' + document.getElementById('txtSearch').value;
+        return false;
+    }
+</script> -->
+	
+	
+	
+	
+	<!-- searchbar -->
+	<form id="frmSearch" class="search2" method="get" action="default.html" />
+<input class="search2" id="txtSearch" type="text" name="serach_bar" size="31" maxlength="255"       
+value="" style="left: 396px; top: 153px; width: 293px; height: 26px;" />
+<input class="search1" type="submit" name="submition" value="Search" style=" padding-  
+bottom:20px; left: 691px; top: 153px; height: 23px" />
+<input class="search2" type="hidden" name="sitesearch" value="default.html" />
+	
+	<script type="text/javascript">
+    document.getElementById('frmSearch').onsubmit = function() {
+      window.location = 'http://www.google.com/search?q= ' + document.getElementById('txtSearch').value;
+        return false;
+    }
+</script>
+	
+	
+	
+	
+	<!-- questions -->
+
+
+
+	<div class="row container">
+		
+		
+		<div class="col-lg-12 col-md-6 col-sm-6">
+			<div class="jumb"> 
+
+<p><strong class = "titles">What are Mutual Funds? </strong> A mutual fund is a company that pools money from many investors and invests the money in securities such as stocks, bonds, and short-term debt. The combined holdings of the mutual fund are known as its portfolio. Investors buy shares in mutual funds. Each share represents an investor’s part ownership in the fund and the income it generates.</p>
+			</div>
+		</div>
+
+	<!-- 	replicate top code segment for more info -->
+
+
+		
+		<div class="col-lg-12 col-md-6 col-sm-6">
+			<div class="jumb"> 
+
+<p><strong class = "titles" >Why do people buy mutual funds?</strong> Mutual funds are a popular choice among investors because they generally offer the following features: <strong> Professional Management-</strong> The fund managers do the research for you. They select the securities and monitor the performance.<strong> Diversification- </strong> Mutual funds typically invest in a range of companies and industries. This helps to lower your risk if one company fails.<strong> Affordability-</strong> Most mutual funds set a relatively low dollar amount for initial investment and subsequent purchases.<strong> Liquidity- </strong>Mutual fund investors can easily redeem their shares at any time, for the current net asset value (NAV) plus any redemption fees.</p>
+			</div>
+		</div>
+
+	<!-- 	replicate top code segment for more info -->
+
+	<div class="col-lg-12 col-md-6 col-sm-6">
+			<div class="jumb"> 
+
+<p><strong class="titles">What types of mutual funds are there?</strong> Most mutual funds fall into one of four main categories – money market funds, bond funds, stock funds, and target date funds. Each type has different features, risks, and rewards.
+
+<strong>Money market funds</strong> have relatively low risks. By law, they can invest only in certain high-quality, short-term investments issued by U.S. corporations, and federal, state and local governments.
+<strong>Bond funds</strong> have higher risks than money market funds because they typically aim to produce higher returns. Because there are many different types of bonds, the risks and rewards of bond funds can vary dramatically.
+<strong>Stock funds</strong> invest in corporate stocks. Not all stock funds are the same. Some examples are:
+<ul><li><strong>Growth funds</strong>  focus on stocks that may not pay a regular dividend but have potential for above-average financial gains.</li>
+<li><strong>Income funds</strong>  invest in stocks that pay regular dividends.</li>
+<li><strong>Index funds</strong> track a particular market index such as the Standard & Poor’s 500 Index.</li>
+<li><strong>Sector funds</strong> specialize in a particular industry segment.</li></ul>
+<strong>Target date funds </strong> hold a mix of stocks, bonds, and other investments. Over time, the mix gradually shifts according to the fund’s strategy. Target date funds, sometimes known as lifecycle funds, are designed for individuals with particular retirement dates in mind.
+</p>
+			</div>
+		</div>
+
+	<!-- 	replicate top code segment for more info -->
+
+	<div class="col-lg-12 col-md-6 col-sm-6">
+			<div class="jumb"> 
+
+<p><strong class="titles">What are the benefits and risks of mutual funds?</strong> Mutual funds offer professional investment management and potential diversification. They also offer three ways to earn money:
+
+<ul><li><strong>Dividend Payments</strong> A fund may earn income from dividends on stock or interest on bonds. The fund then pays the shareholders nearly all the income, less expenses.</li>
+<li><strong>Capital Gains Distributions </strong> The price of the securities in a fund may increase. When a fund sells a security that has increased in price, the fund has a capital gain. At the end of the year, the fund distributes these capital gains, minus any capital losses, to investors.
+</li>
+<li> <strong> Increased NAV</strong> If the market value of a fund’s portfolio increases, after deducting expenses, then the value of the fund and its shares increases. The higher NAV reflects the higher value of your investment.</li>
+
+</ul>
+All funds carry some level of risk. With mutual funds, you may lose some or all of the money you invest because the securities held by a fund can go down in value. Dividends or interest payments may also change as market conditions change.
+
+A fund’s past performance is not as important as you might think because past performance does not predict future returns. But past performance can tell you how volatile or stable a fund has been over a period of time. The more volatile the fund, the higher the investment risk.</p>
+			</div>
+		</div>
+
+	<!-- 	replicate top code segment for more info -->
+
+	<div class="col-lg-12 col-md-6 col-sm-6">
+			<div class="jumb"> 
+
+<p><strong class="titles">How to buy and sell mutual funds?</strong> Investors buy mutual fund shares from the fund itself or through a broker for the fund, rather than from other investors. The price that investors pay for the mutual fund is the fund’s per share net asset value plus any fees charged at the time of purchase, such as sales loads.
+
+Mutual fund shares are “redeemable,” meaning investors can sell the shares back to the fund at any time. The fund usually must send you the payment within seven days.
+
+Before buying shares in a mutual fund, read the prospectus carefully. The prospectus contains information about the mutual fund’s investment objectives, risks, performance, and expenses.</p>
+			</div>
+		</div>
+
+	<!-- 	replicate top code segment for more info -->
+
+	<div class="col-lg-12 col-md-6 col-sm-6">
+			<div class="jumb"> 
+
+<p><strong class="titles"> Understanding fees?</strong> As with any business, running a mutual fund involves costs. Funds pass along these costs to investors by charging fees and expenses. Fees and expenses vary from fund to fund. A fund with high costs must perform better than a low-cost fund to generate the same returns for you.
+
+Even small differences in fees can mean large differences in returns over time. For example, if you invested $10,000 in a fund with a 10% annual return, and annual operating expenses of 1.5%, after 20 years you would have roughly $49,725. If you invested in a fund with the same performance and expenses of 0.5%, after 20 years you would end up with $60,858.
+
+It takes only minutes to use a <a class="linky" href = "https://www.investor.gov/financial-tools-calculators/financial-tools/mutual-fund-analyzer">mutual fund cost calculator</a> to compute how the costs of different mutual funds add up over time and eat into your returns. See the <a class="linky" href="https://www.investor.gov/glossary-term-categories/mutual-fund">Mutual Fund Glossary</a> for types of fees.</p>
+			</div>
+		</div>
+		
+		<button class="btn btn-md btn-default " style= "margin: 20px ">
+			<a class="linky" href= "/learn/new">Submit Your Question!</a>
+		</button>
+
+	<!-- 	replicate top code segment for more info -->
+
+	<!-- <div class="col-lg-12 col-md-6 col-sm-6">
+			<div class="jumb"> 
+
+<p><strong class="titles">Example Topic One:</strong> So each paragraph here is supposed to explain a concept about finacnce to help</p>
+			</div>
+		</div> -->
+
+	<!-- 	replicate top code segment for more info -->
+</div>
+
+
+<!-- 	come back to this later!!! -->
+	
+	<!-- <p id = "faqq" class = "faq">Frequently Asked Questions(FAQs):</p>
+	<p class = "faq"><strong>Question 1: </strong> This is the answer to your question hehehhehehehheh</p>
+	<p class = "faq"><strong>Question 2: </strong> This is the answer to your question hehehhehehehheh</p>
+	<p class = "faq"><strong>Question 3: </strong> This is the answer to your question hehehhehehehheh</p>
+	<p class = "faq"><strong>Question 4: </strong> This is the answer to your question hehehhehehehheh</p> -->
+
+
+<!-- links -->
+
+<p id = "rl" class = "faq linky">Related Links:</p>
+	
+	<div>
+	<a class="linky" href= "https://www.fidelity.com/learning-center/investment-products/mutual-funds/what-are-mutual-funds#:~:text=Mutual%20funds%20are%20investments%20that,overseen%20by%20a%20portfolio%20manager." class = "faq">Click Here to Learn More About Mutual Funds.</a>
+</div>
+
+	<div>
+	<a class="linky" href= "https://www.veteransunited.com/money/5-reasons-to-start-investing-early/#:~:text=Your%20spending%20habits%20will%20improve,life%20full%20of%20impulse%20buying." class = "faq">Click Here to See The Benefits of Early Investment and Planning</a>
+</div>
+	
+	<div>
+	<a class="linky" href= "https://www.nerdwallet.com/article/investing/what-is-the-stock-market#:~:text=The%20concept%20behind%20how%20the,negotiate%20prices%20and%20make%20trades.&text=Investors%20can%20then%20buy%20and,demand%20of%20each%20listed%20stock." class = "faq">Click Here to Learn More About The Stock Market and How It Works.</a>
+</div>
+
+	<div>
+	<a class="linky" href= "https://www.investopedia.com/ask/answers/10/mutual-funds-advantages-disadvantages.asp" class = "faq">Click Here to Learn More About The Advantages and Disadvantages of Mutual Funds</a>
+</div>
+
+	
+
+
+
+
+	</body>
+</html>
