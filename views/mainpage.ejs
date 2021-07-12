@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Vest-Me | MAIN</title>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 							crossorigin="anonymous">
+	
+		<link rel="shortcut icon" type="image/png" href="https://www.netclipart.com/pp/m/0-575_floral-watercolor-		png-watercolor-flower-png-pink.png">
+		
+		<link href= "/public/assets/styles.css" rel="stylesheet" type="text/css"/>
+		
+		<html lang="en">
+<!-- metadata -->
+		<meta charset="utf-8"/>
+
+		<meta name= description content="Site made to help guide newcomers to finance and investing with a smiple, 		   hands-on scenarios that models the real world!"/> 
+
+		<meta name="keywords" content="finance,student,growth, invest, smart "/>
+			
+		<meta name="author" content="Maya Koppikar" />
+			
+		
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				
+				
+</head>
+	
+<body class="bod">
+
+<!-- nabvar -->
+	<!-- nabvar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light navy" id = "heyy">
+		<a  class="navbar-brand"  >
+  		<img src="https://www.netclipart.com/pp/m/0-575_floral-watercolor-png-watercolor-flower-png-pink.png" 			width="30" height="30" alt="" loading="lazy">Vest-Me</a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+   	   		<ul class="navbar-nav mr-auto">
+      			<li class="nav-item ">
+       				<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      			</li>
+
+      			<li class="nav-item">
+       				<a class="nav-link" href="/about">About</a>
+     			 </li>
+
+     			 <li class="nav-item">
+       			 	<a class="nav-link" href="/learn">Learn</a>
+      			 </li>
+
+				
+				
+
+				<% if(!currentUser){ %>
+
+				 <li id = "signup" class="nav-item">
+        			<a class="nav-link" href="/register">Sign Up</a>
+      			 </li>
+
+				 <li class="nav-item">
+       				<a class="nav-link" href="/login">Login</a>
+      			 </li>
+				<% } else { %>
+		<li id="messa">Signed In As <%= currentUser.username%></li>
+				
+				<li id = "herro" class="nav-item">
+       				<a class="nav-link" href="/mainpage">Mainpage</a>
+      			 </li>
+				
+				
+				
+				<li id = "signout" class="nav-item">
+       				<a class="nav-link" href="/logout">Sign Out</a>
+      			 </li>
+
+				<% } %>
+				
+	
+			</ul>
+			</ul>
+  		</div>
+	</nav>
+	
+		
+	<div class="errorsuccess container">
+
+	<% if(error && error.length > 0){  %>
+					<div class= "alert alert-danger" role="alert">
+					<%= error %>
+						</div>
+	
+	 <% }  %>
+	
+	<% if(success && success.length > 0){  %>
+					<div class= "alert alert-success" role="alert">
+					<%= success %>
+					</div>
+	
+	 <% }  %>
+	
+</div>
+		
+			<div class="container">
+			<h2 id = "welcometomainpage">Welcome, <%=  currentUser.username %></h2>
+		
+	<div class="container">
+		
+		<div id="portfolio">
+			<h4 id="portitle">Your Portfolio: </h4>
+
+			<% var m = 0 %>
+			<% for(var i=0; i< scenario.length; i++) {%>
+			<% m += scenario[i].currentVal %>
+			
+			<% } %>
+			<p><strong>Net Worth: </strong>$<%= m %></p>
+			<p><strong>Number of Scenarios: </strong><%= scenario.length %></p>
+			
+		</div>
+		
+		
+		
+		
+		</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+
+			
+		
+		<h6 id = "current">Your Scenarios: </h6>
+			
+
+			
+			
+			
+		
+		
+		
+				
+	 <% var scenlength = scenario.length; %>
+		
+		 <%  if(scenlength < 3){ %>
+						   
+					
+		<a class="linky" href= "/scenario/new">Add New Scenario!</a>
+		
+		 <%  } %>
+		
+		 <%  if(!(scenlength < 3)) { %>
+						   
+					
+		<p id = "maxmaxy"><strong>You've Reached a max of 3 Scenarios...</strong></p>
+		
+		 <%  } %>
+		
+	
+	
+		
+		<div class="row">
+	
+			<% scenario.forEach(function(scenario){  %>
+			
+			
+		<div class="scenario col-lg-4 col-md-6 col-sm-6 ">
+			<div> 
+				<!-- individual scenario id fix it -->
+			<button class="elemenopees"><a href= "/scenario/<%= scenario._id %>" ><%= scenario.title %></a></button>
+			<p class="elemenopee"><strong>Starting Value: </strong>$ <%= scenario.startval %> </p>
+			<p class="elemenopees"><strong>Goal Value: </strong>$<%= scenario.goalval %> </p>
+			<p class="elemenopee"><strong>Ideal Finish Date: </strong><%= scenario.enddate %></p>
+			<p class="elemenopees"><strong>Current Date:</strong> <%= new Date(Date.now()).toLocaleString()%></p>
+			<p class="elemenopee"><strong>Current Value:$ <%= scenario.currentVal %></strong></p>
+			<p class="elemenopees"><form action= "/scenario/<%= scenario._id %>?_method=DELETE" method= "POST">
+			<button>Delete</button>
+			</form></span></p>
+				
+			</div>
+		</div>
+		
+		
+			
+		<% })  %>
+		
+		
+		
+		
+		
+		
+		
+		</div>
+		
+		
+		
+		
+			<!-- nabvar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-light navy" id = "heyy">
+		
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+   	   		<ul class="navbar-nav mr-auto">
+		
+
+		
+	<div class="container">
+		
+			</ul>
+  		</div>
+	</nav>
+		
+	
+		
+		
+		
+		
+		
+		
+		</div>
+
+		
+	</div>
+
+	
+	
+
+	
+		</body>
+		</html>
