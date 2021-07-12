@@ -1,0 +1,481 @@
+/* all */
+.bod {
+	background: #5CDB95;
+	 font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#portfolio{
+	background:rgb(255,255,255);
+	margin-top: 20px;
+}
+
+.linky{
+	color: rgb(0,0,0);
+	  text-decoration: underline;
+
+}
+
+#portitle{
+	text-decoration: underline;
+}
+
+#vestnewform{
+	margin:10px;
+	margin-left:30px;
+}
+
+#newinvesttitle{
+	margin-top:20px;
+}
+
+.texty{
+	padding:10px;
+	border: 1px solid black;
+ 	font-size: 15px;
+	
+}
+
+.green{
+color:rgb(0,128,0);
+}
+
+.red{
+color:rgb(255,0,0);
+}
+
+.testy{
+	padding:10px;
+	border: 1px solid black;
+ 	font-size: 15px;
+	
+}
+
+
+#newvest{
+	margin-top:20px;
+}
+
+.errorsuccess{
+	margin-top:20px;
+}
+
+#backbuttoners{
+	
+	margin:20px;
+}
+
+#back{
+	margin:20px;
+
+}
+
+/*index.html*/
+#cont{
+	background:rgb(160,160,160);
+	color: black;
+	margin-bottom: 40px;
+}
+
+#cheese{
+	margin-top: 10px;
+	color: black;
+}
+
+#signup{
+margin-left: 700px;
+}
+#signout{
+margin-left: 500px;
+}
+
+#heyy{
+	border-bottom: 1px solid lightgray;
+	margin-top:30px;
+
+}
+
+#messa{
+	margin-left:20px;
+	margin-top:8px;
+}
+
+
+
+#herro{
+	margin-left:20px;
+	
+}
+
+
+
+
+
+
+
+.boar{
+border:2px solid rgb(128,128,128);
+}
+
+#jumboback{
+	margin-top: 20px;
+	color:rgb(112,112,112);
+
+}
+
+
+.tex{
+color:black;
+}
+
+
+#jumbo{
+	border:1px solid rgb(128,128,128);
+}
+
+.jumb{
+	border:2px solid rgb(128,128,128);
+	margin-top:20px;
+	padding: 10px;
+}
+
+.thumb{
+	height:100px;
+}
+
+#cool{
+	margin-bottom: 20px;
+	color:black;
+}
+
+
+
+#aboutitle{
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
+
+.xx{
+	padding: 20px;
+	margin-top:10px;
+	margin-left:10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+
+}
+
+#heyyo{
+	padding: 20px;
+	margin-top:10px;
+	margin-left:10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+
+}
+#bob{
+	padding: 20px;
+	margin-top:30px;
+	margin-left:10px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+
+}
+#a{
+border:2px solid rgb(128,128,128);
+}
+#b{
+	border:2px solid rgb(128,128,128);
+}
+#c{
+	border:2px solid rgb(128,128,128);
+}
+
+
+
+/*learn.html*/
+#fintitle{margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 20px;
+}
+
+.titles{
+	color:rgb(56,56,56);
+}
+
+
+#bo{
+	color:rgb(128,128,128);
+	margin-left: 20px;
+}
+
+#listy{
+	margin-left:20px;
+	margin-right: 20px;
+}
+
+#searchbar{
+	float:right;
+	margin-right: 50px;
+
+}
+
+#sig{
+	margin-top: 20px;
+}
+
+#signin{
+	margin-right: 50px;
+}
+
+.faq{
+	margin:20px;
+}
+
+#explam{
+	background: rgb(160,160,160);
+}
+
+#faqq{
+	margin-top: 50px;
+	margin-left:50px;
+	color:rgb(128,128,128);
+	text-decoration: underline;
+}
+
+#chickencurry{
+	margin-top:20px;
+}
+
+#chickencurrytwo{
+	margin-top:20px;
+}
+
+#rl{
+	margin-left:50px;
+	color:rgb(128,128,128);
+	text-decoration: underline;
+}
+
+#maxmaxy{
+	color:red;
+	
+}
+
+
+/*userMain*/
+
+#moo{
+	background: white;
+}
+
+
+
+
+.scenario{
+
+	background: #05386B;
+	border: 1px solid rgb(128,128,128);
+	margin-top:10px;
+	
+		
+}
+
+
+
+
+
+
+
+#submitnewquestion{
+margin: 20px;
+background: rgb(128,128,128);
+text-align: center;
+}
+
+
+
+#welcometomainpage{
+	margin-top:20px;
+	margin-left:5px;
+}
+
+#current{
+	margin-top:20px;
+	text-align:center;
+}
+
+#leaderboard{
+	margin:20px;
+}
+
+#leaderstable{
+	width:50%;
+	
+}
+
+.lead{
+	border:2px solid rgb(128,128,128);
+}
+
+#hellotherebob{
+		background:rgba(245, 66, 66, .4);
+}
+
+.elemenopee{
+
+margin:5px;
+	background: rgb(255,255,255);
+}
+
+.elemenopees{
+
+margin:5px;
+background: rgb(211,211,211);
+
+}
+		
+.redd{
+width:75px;
+	background:rgba(212, 15, 15, .5);
+}
+
+.orangee{
+width:75px;
+	background:rgba(255,165,0, .5);
+}
+.yelloww{
+width:75px;
+	background:rgba(255,255,0, .5);
+}
+.greenn{
+width:75px;
+	background:rgba(144,238,144, .5);
+}
+.bluee{
+width:75px;
+	background:rgba(0,100,0, .5);
+	
+}
+.purplee{
+width:75px;
+	background:rgba(19, 207, 240, .5);
+}
+.pinkk{
+width:75px;
+	background:rgba(242, 99, 173, .5);
+}
+.grayy{
+width:75px;
+	background:rgba(128, 128, 128, .5);
+}
+.brownn{
+width:75px;
+	background:rgba(128,0,128, .5);
+}
+.blackk{
+width:75px;
+	background:rgba(0, 0, 0, .5);
+}
+
+.teal{
+width:75px;
+	background:rgba(210,105,30, .5);
+}
+
+
+.lightblue{
+width:75px;
+	background:rgba(210,180,140, .5);
+}
+
+#titleone{
+	margin-left:10px;
+width:75px;
+	background:rgba(212, 15, 15, .5);
+		margin-top:20px;
+}
+#titletwo{
+width:75px;
+	background:rgba(255,165,0, .5);
+		margin-top:20px;
+}
+
+#titlethree{
+width:75px;
+	background:rgba(255,255,0, .5);
+		margin-top:20px;
+}
+
+#titlefour{
+width:75px;
+	background:rgba(144,238,144, .5);
+		margin-top:20px;
+}
+
+#titlefive{
+width:75px;
+	background:rgba(0,100,0, .5);
+		margin-top:20px;
+}
+
+#titlesix{
+width:75px;
+background:rgba(19, 207, 240, .5);
+		margin-top:20px;
+}
+
+#titleseven{
+width:75px;
+background:rgba(242, 99, 173, .5);
+		margin-top:20px;
+}
+
+#titleeight{
+width:75px;
+background:rgba(128, 128, 128, .5);
+		margin-top:20px;
+}
+
+#titlenine{
+width:75px;
+background:rgba(128,0,128, .5);
+		margin-top:20px;
+}
+
+#titlenineone{
+width:75px;
+background:rgba(210,105,30, .5);
+		margin-top:20px;
+}
+
+#titleninetwo{
+width:75px;
+background:rgba(210,180,140, .5);
+		margin-top:20px;
+}
+
+#titleten{
+	width:75px;
+	background:rgba(0, 0, 0, .5);
+		margin-top:20px;
+}
+
+#infoaboutnewinvestments{
+margin:20px;
+	background: rgba(128,128,128,.5);
+	border:1 px solid black;
+}
+
+#newinvestmentheader{
+	margin:10px;
+}
+
+#entremadame{
+	text-align:center;
+	margin:10px;
+	margin-top:20px;
+	position: absolute;
+  	left: 47%;
+}
+
+
