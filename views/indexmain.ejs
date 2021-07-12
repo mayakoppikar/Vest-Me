@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vest-Me</title>
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 							crossorigin="anonymous">
+	
+		<link rel="shortcut icon" type="image/png" href="https://www.netclipart.com/pp/m/0-575_floral-watercolor-		png-watercolor-flower-png-pink.png">
+		
+		<link href= "/public/assets/styles.css" rel="stylesheet" type="text/css"/>
+      
+        
+		<html lang="en">
+<!-- metadata -->
+		<meta charset="utf-8"/>
+
+		<meta name= description content="Site made to help guide newcomers to finance and investing with a smiple, 		   hands-on scenarios that models the real world!"/> 
+
+		<meta name="keywords" content="finance,student,growth, invest, smart "/>
+			
+		<meta name="author" content="Maya Koppikar" />
+			
+		<meta http-equiv="refresh" content="30">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+ <body class="bod">
+	 <!-- nabvar -->
+	<!-- nabvar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light navy" id = "heyy">
+		<a  class="navbar-brand"  >
+  		<img src="https://www.netclipart.com/pp/m/0-575_floral-watercolor-png-watercolor-flower-png-pink.png" 			width="30" height="30" alt="" loading="lazy">Vest-Me</a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+   	   		<ul class="navbar-nav mr-auto">
+      			<li class="nav-item ">
+       				<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      			</li>
+
+      			<li class="nav-item">
+       				<a class="nav-link" href="/about">About</a>
+     			 </li>
+
+     			 <li class="nav-item">
+       			 	<a class="nav-link" href="/learn">Learn</a>
+      			 </li>
+
+				
+				
+
+				<% if(!currentUser){ %>
+
+				 <li id = "signup" class="nav-item">
+        			<a class="nav-link" href="/register">Sign Up</a>
+      			 </li>
+
+				 <li class="nav-item">
+       				<a class="nav-link" href="/login">Login</a>
+      			 </li>
+				<% } else { %>
+		<li id="messa">Signed In As <%= currentUser.username%></li>
+				
+				<li id = "herro" class="nav-item">
+       				<a class="nav-link" href="/mainpage">Mainpage</a>
+      			 </li>
+				
+				
+				
+				<li id = "signout" class="nav-item">
+       				<a class="nav-link" href="/logout">Sign Out</a>
+      			 </li>
+
+				<% } %>
+				
+	
+			</ul>
+			</ul>
+  		</div>
+	</nav>
+	
+		
+	<div class="errorsuccess container">
+
+	<% if(error && error.length > 0){  %>
+					<div class= "alert alert-danger" role="alert">
+					<%= error %>
+						</div>
+	
+	 <% }  %>
+	
+	<% if(success && success.length > 0){  %>
+					<div class= "alert alert-success" role="alert">
+					<%= success %>
+					</div>
+	
+	 <% }  %>
+	
+</div>
+		
+		
+		
+		
+		
+    
+    
+		<!-- jumbotron -->
+	<div id = "jumboback" class="container">
+		<div id = "jumbo" class= "jumbotron">
+			<h1><span>  <img src="https://www.netclipart.com/pp/m/0-575_floral-watercolor-png-watercolor-flower-			png-pink.png" height="40px" width="40px"></span> Vest-Me</h1>
+			
+			<p id = "cheese">“It's the little details that are vital. Little things make big things happen.” - John 			Wooden</p>	
+		</div>
+		
+		
+    </div>
+   
+
+<div >
+
+
+	<div id = "cont" class = "container">
+	
+	<p> Are you curious about how investing works? If you need some practice and guide on how to invest in  		mutual funds safely and be successful in a certain amount of time, you've come to the right place. 				PLease sign in or create an account and practice starting small and ending big. Plus, you can make your 		mistakes here and face no loss, because we use real data to practice using mock money! Give it a 				try...it will be fun and rewarding! </p>
+
+	</div>
+
+<div class = "container">
+	
+	
+<!-- start of features -->
+		<h5 id = "cool">Latest Features: </h5>
+
+<!-- features -->
+		<div class="row">
+		
+			<div class="col-lg-4 col-md-6 col-sm-6 ">
+					<div class="rounded"> 
+					
+						<img class= "boar" src="data:image/jpeg;base64,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" height="200px" width="100%">
+						
+						<p class="tex">The leaderboard, found on your main page,  will post the amounts earned by 						  the 10 most succesful users of the month. You got this!</p>
+			</div>
+		</div>
+			
+			
+			
+
+		
+		<div class="col-lg-4 col-md-6 col-sm-6 ">
+			<div class="rounded"> 
+  				<img class= "boar" src="https://www.kindpng.com/picc/m/19-194673_book-stack-clipart-black-and-					white-hd-png.png" height="200px" width="100%">
+				
+				<p class="tex">Visit the 'Learn' tab and explore how investment works, the types of mutual funds, 				  have your frequently asked questions answered, and see related links.</p>
+			</div>
+		</div>
+
+		
+		<div class="col-lg-4 col-md-6 col-sm-6 ">
+			<div class="rounded"> 
+				<img class= "boar" src="https://library.kissclipart.com/20191103/trw/kissclipart-scale-triangle-				balance-black-and-white-symbol-964e1f4210f26193.png" height="200p" width="100%">
+				
+				<p class="tex">Easy to use balancing feauture to help you assess the risk of each 				  				  fund on a scale from Stable/Conservative to Risky.</p>
+			</div>
+		</div>
+
+		
+		<div class="col-lg-4 col-md-6 col-sm-6 ">
+			<div class="rounded"> 
+				<img class= "boar" src="https://i.stack.imgur.com/Se6sH.png" height="200px" width="100%">
+				
+				<p class="tex">Run multiple scenarios simultaneously, each using different investing strategies. 				 Then, see which yields the best outcome!</p>
+			</div>
+		</div>
+
+		
+		<div class="col-lg-4 col-md-6 col-sm-6 ">
+			<div class="rounded"> 
+				<img class= "boar" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRmWCMEJRj6w-					AHbWYHYu8kOwmSuHC2xCjRng&usqp=CAU" height="200px" width="100%">
+				
+				<p class="tex">Our generated statistics will help you understand your progress and growth. Make 				your necessary adjustments and see your investments skyrocket! </p>
+			</div>
+		</div>
+
+		
+		<div class="col-lg-4 col-md-6 col-sm-6">
+			<div class="rounded"> 
+				<img class= "boar" src="https://bpcdn.co/images/2016/05/pre-school-bar-chart.png" height="200px" 				 width="100%">
+				
+				<p class="tex">Get real-time data and see current values with only a minimal time lag. You see the 					same information you would when you are to invest for real!</p>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+	
+	</div>
+
+
+</body>
+	
+</html>
