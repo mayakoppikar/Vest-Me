@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Vest-Me | ABOUT</title>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 							crossorigin="anonymous">
+	
+		<link rel="shortcut icon" type="image/png" href="https://www.netclipart.com/pp/m/0-575_floral-watercolor-		png-watercolor-flower-png-pink.png">
+		
+		<link href= "/public/assets/styles.css" rel="stylesheet" type="text/css"/>
+		
+		<html lang="en">
+<!-- metadata -->
+		<meta charset="utf-8"/>
+
+		<meta name= description content="Site made to help guide newcomers to finance and investing with a smiple, 		   hands-on scenarios that models the real world!"/> 
+
+		<meta name="keywords" content="finance,student,growth, invest, smart "/>
+			
+		<meta name="author" content="Maya Koppikar" />
+			
+		<meta http-equiv="refresh" content="30">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				
+				
+</head>
+	
+<body class="bod">
+	
+<!-- nabvar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light navy" id = "heyy">
+		<a  class="navbar-brand"  >
+  		<img src="https://www.netclipart.com/pp/m/0-575_floral-watercolor-png-watercolor-flower-png-pink.png" 			width="30" height="30" alt="" loading="lazy">Vest-Me</a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+   	   		<ul class="navbar-nav mr-auto">
+      			<li class="nav-item ">
+       				<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      			</li>
+
+      			<li class="nav-item">
+       				<a class="nav-link" href="/about">About</a>
+     			 </li>
+
+     			 <li class="nav-item">
+       			 	<a class="nav-link" href="/learn">Learn</a>
+      			 </li>
+
+				
+				
+
+				<% if(!currentUser){ %>
+
+				 <li id = "signup" class="nav-item">
+        			<a class="nav-link" href="/register">Sign Up</a>
+      			 </li>
+
+				 <li class="nav-item">
+       				<a class="nav-link" href="/login">Login</a>
+      			 </li>
+				<% } else { %>
+				
+				<li id="messa">Signed In As <%= currentUser.username%></li>
+				
+				<li id = "herro" class="nav-item">
+       				<a class="nav-link" href="/mainpage">Mainpage</a>
+      			 </li>
+				
+				
+				
+				<li id = "signout" class="nav-item">
+       				<a class="nav-link" href="/logout">Sign Out</a>
+      			 </li>
+
+				<% } %>
+				
+	
+			</ul>
+			</ul>
+  		</div>
+	</nav>
+	
+
+<div class="errorsuccess container">
+
+	<% if(error && error.length > 0){  %>
+					<div class= "alert alert-danger" role="alert">
+					<%= error %>
+						</div>
+	
+	 <% }  %>
+	
+	<% if(success && success.length > 0){  %>
+					<div class= "alert alert-success" role="alert">
+					<%= success %>
+					</div>
+	
+	 <% }  %>
+	
+</div>
+		
+	
+		
+		<div >
+
+	<h4 id = "aboutitle">About Vest-Me:</h4>
+
+		<div class="row">
+		
+			<div class="col-lg-6 col-md-6 col-sm-12">
+				<div class="rounded xx"> 
+					
+				<img id = "a" 								src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAABLFBMVEX///8AAAAAAQUBAQD+/v8DBAgBAQb///0BAwP4+Pj09PT7+/v9//8DAABOTk7b29vT09OFhYW9vb2SkpKenp7k5+cuLi6np6fp6elXV1ixsbIdHR18fHxmZmZ0dHTBwcFBQUGPj49GR0SepqXS1NjAys6lrLEtKTVhZGpydH2xtLpTVFckJSY0NTSjpa1qdYB7hIpCQ0mMipI5ICuemaDg0tvHtrvo4OUnHCdGNj3JxMsbFRurnqMRDxMGFCUbJjFASVE0NTwqMjVQXGBncXJIUlCOlaIIDhYADhSPW2TEoJ5CAAB3Tk5rS1EQFBGrlJBVOTwhERQ5JCXbxcc6ERaZfHtsbmd2ZlwlJiBOPjVzREHa3NPKsKpfT02bhIEzAACAb3ExHhaTlIxNRTyZEut+AAALfklEQVR4nO2dC3fbthXHcfkCRVFP62XZsiw3SVNHzpxsq9csXpt0W/ZonXXZ0mWt9+i+/3cYLkhZIgmQkCU5QILfSXxkU+IB/7y4uPcCoAixWCwWi8VisVjeJ55HKPvhefF2Txt7xNvqGXdJ1I4+iSnZfoujbZ9wR1BK7sF9eEBOe9s8K+kODwl0jbAEj47uk08ffgbkFLZ62x7Nz5r3YJu67pAWPH4AP4MHbWhv8awjgOP52T5MzOgPp3AOAE86MN38XEs32AHEha0quzuesqaGrMGnWzhXq7Z49QRStiDtzqHkDFyH3bGHhNSHh316+1M1I2gtXtf2FyK09PeMHrngVuvAeS+An//itudpdbqDbkj6N/f9l41Eg5PttHOXsBjpmGkQ+tjez28fJvR6xz0Y1hdjAYs4Ln5lTm8gPWYGLnMJX1zcWgFKJvtwDP1B8+ZPLO589mvUYMBfaw4byYAZ7nPW1Ns2Fr0KwPw4F2VEXITh5k3cNTHvDBtJwBhAern1mz9Rj5kYor8ZxOQhjuSjzc7CL7ZJJuPMX0dgiCGQI3DdTaMZ7lObe1kpKeFDZFiXfUoXKAuTWJQ0rn5n2TkOkkFgkjsw5n81IHE4hTCE2SZnoJTbAezn73jE/3ygfZhE2uD48AjvZpb+eKpqxSOeHRwWDxwbESPEtA8sTPzUozkNvNol+EdqJxmLTT4mM66B4lneH5QZrOMwb1bIFabo1JWc5QQtXnRgyjW40twreqT2G9SgYK+UNPkFjIviFMD3dUQHEoew6ciLxDsNM7wv0SEIOnPq1u9XnqGNb+sKD01AfmwtdqsB+Qo1eCG63W3u64bllkCTmon4Xk95dUJoI2uyWw0essExhHuiQ615UgQoZ5DkRiJqAZ5gvmELkd1q8JRr8LR4gGXWkQ8CX5GlVeb793hn6G/cyB3zAHw/hJfigx2mQUUQyVOjPcnBKHWsmnMfNfAlFn/ENKgIdpulmdGBdNDQiT7zib4PokJakvbI7nHKGXpOSRxBIzOiJPIloAYvBEdoPGB2UK5BHe/0pWwuoW2IBp+hBtnOsIicWSYQVPSFUVI7kJDUUUTRh16wzBE1eLz4PWawboCjEUuogooqSLu0wydBUkVv0oARBPnOsEh3h9UajEtd4sCMEgIlj5LO0OUBIfs/PQ9efv3bFvWYz3eqxsZeJj32UL1Rvx5NjzqfTFtpwqD92Ogx581HhnmNogT3XkKa6rC82hHlUxl6mYwgJrW9S4DfJWc4SRJH7SsIeOPPE0PYwz7wAHjcyP79nkV5qEF5rNzN+APvGUbHDf7fhYMJ5gsblyvvhOgVxkmOEyUSOI6LU7Gv+k2sr1SkvjxUTqoHzJUOIcMVz5n0j5XRA+4xt8hixaek9gdAMXA62oUnqAdULNCo8YtldzquRxcTnmmuEPJfa6Vn0ITEI/gQnYLvJPeO/3TdKg1ijJVd7Az1eve7RLQ8kqRSNw4Tj9B5DE4Yuum99Nlrp/Iu7uHNPmBm8Me8ESzYv5tr2JQWN4TAP4IbBRh8uPAryoFTnLVlI8OfGqkBFdA+ZUpJYoTA5x0gbbvrB+BXBvuJQziO/iwWAAwID1LGODKEoZ+5laETBNXVwKT4OvvmW5kGW6ip3gndRIPQX+3SIYbKlVcw4++9ev3tpVgCQ1wiIc8wcXJDHBdXNQjhsvKjmDUx5ZrPvxBrYIo7oDWcanFD1wmcrAb5idQCMUnfPfyLWAMTosSECQuO2N0MHG4J3C2EzC5U1g/M0ottiDUwIkLiMKfIur8bMENw0nHedd2wsrJOsBoHIIsNAM523/Zt0U+CZIeDKVN6XSqfbcpMAKnsTBrxil17mGrgcA2wbyjFeF25AmZpcMiuf2kJmPOiBkplsPpBmQgKvUkXpiw/WBCwCJHlS8wa1Jz6sEwDU0IkwlOGJQF6RodFzkprB+IyQzjQfPnBKufcKS5VQGtQrorP5BpcbbAS/K55tNIXeG/AcEm1L7dL+oI58QF5kdUg8J3KGtKSqEQDM/azcHDKzcmoUFlXX6H5QWjwVV4D1hvkk2h55J1BuFpLUzoQZDRw0COoJzySxNmsGOleXgNuCMpXMJFpsIUVWXeFR54snSKLj7gKECh79b0PQoNxokHS8qQ3hIHyPFlLpoEp1USCpZD6HJYacBmYk1ScN48JuZZooP1kY4YeZCppLguWA/U1JBcSDcwpIyFdLKetNj8IAvXRkczEGpiwkWVJC4LsTBlmDK9UPx2PxBrovwglwyDXfNQAVLdgxOQ7oQb6L0bKkC8D8DqCevovrq2rdyYtaOcqo0wD2eJNEc/FhVWD8gUiyP7Y8LhGjCNMHl3TOkPhCpzKpbo3xB75q7AzmLAMZYVCSczBAEF5Y9pUrMGZQZUkQvbzzXcwfVbeO9CSzDMYVFUVJH9OCAOFHU0pU4kGRnnFw4IGAPP8tj85b8R9Qa04rQuiIsAadkD+JtbAoKrqYmNq1hCO1T/+uaQvGBUuF5vvwL76uPCNpC+A/o+GuaEv0mCNEEeSNRlVQxAUhx2YqY+N0uKy9ov3lwjsYI1nI8Tk7zIN3u6y1dtFUBd1lXMmL079wSJvWqnHGLQWRbjOdI3BnduBsziLi4s9XdwIYMKzolKORBJ8r/pp5jVe49aHGyFxNRMu5GA//7HLZm8ToUd7Fyl7xJj+E3yBKWGXMCVjEE6bFh5yIoWSN6+la7N+2GXDt0dN3Hrl0jglP/4oUcCYArsk+VeO9Us1MCRIEk+aqs+UxeT1tXSh5skaidf7QxTnuixZUG47jaVTjq4h9TTJ8jql8ocXeyiVbLZtPXt6j4w3aDtuj65H0RtwpWt2jViJITFkpWyHktq//p1s65RhxkYOcdtVnqQWx1SydWEFI2qKhZoyR2UTCqWytQcrGLEcRewUqzTAZ+yrSGDAszCIsHgA1U8VjGmsJIEhqWPnNhqQOLqW7e3MYkKQRGqXBb8eVpeEI8luthyuGVGScHis1ECpIyCGpM8CEcp9ImWeVKkjGLQcpbgxqTxGouSdqgaGZM/EK/rFitsXyff05TAiYUg4y7e93J1LU8UCRsRICcP8fS1vu3RmqYAhVRSklu/e5QkfHaSPS9gv2eWJGLUWpeARyotpvALXOZxW9QqjVqsWrLvCiNuH/FHzMZmUekdTHgCQkM8fO4oT55KabIohz4VJoPncSbX6Ue4etUwbKZXd3/xiFMUgty5ZnaizHSR1UAH54VE1upmVaaBh6kyPepLbS2neqFXLoaOymFHDmirOr/6nzWt8cRyvdgpK8xOPc7WhHQNtee6goQap3R5P2+2iPeSHetXMv7VqCCFk/IqG6QJ+G88isnu314qiESOK6syiu8OOn9VAsf0xfvPZEniLn108dEu/XQyyLdoHx4WcCdZI/btLDRpwxp+btNDgrXbL80rjmYJjUx/XDpYiwGwEDfdGA/1SptJndxRQtWOPudpGagYNaNWxv6WCaKiBZHJRgrJPp/j1bw0mAJOA5VqHkLxGDfSbZpJu0BayzgrLa+CX3YCfcPky/wWdQ0+/9QdrSXC1zj2sXQOgFQwJjWu9M/yF/XqinQKlTy8psk4VLKZket347/dYQcVvzu7yPY8nNf006K1jBetHN5kLbg+HWs6uiKeYRZxtxZ/rFhogV6oSHOlnw1ui7EE+GTofrAS5ik8x19vvTRntfl1PK94K+QKBu3yc8FVT7SvajCe7Kvdknr4YHI619OC7Yb5qAzOWPAze/jTlkZCnXzy3I1Y3Khz0yA/Rx3LhKyzjxP8lcx+Uqm9m/VAYtqdJR5gY8DXcu8G7iRE+xl6w5AQl0K/Kd6fwvEnDivddwhcaGLNQakcwr9g0ZL3c7ph+HFGxxWKxWCwWi8VisVgsFovFYrFYLBaLxWKxWCwWi8VisVgsFovFYrFYcvwfdBWMSg4EETcAAAAASUVORK5CYII=" height="100%" width="100%">
+			</div>
+		</div>
+
+		
+		<div class="col-lg-6 col-md-6 col-sm-12">
+			<div class="rounded xx"> 
+<p><strong>What We Do:</strong>    Our goal is to help newcomers navigate through the seemingly daunting world of finance and investing. Using a very hands on approach, we simulate real world scenarios by displaying real data for students to invest in mock money. Essentially, our users will leave our site with a better understanding of when to invest, what to invest in, and learn strategies to maximize their gains wihtout actually experiencing losses durin this learning process. Hopefully, they will gain confidence and awareness and will be greatly benefitted as they prepare for next steps.</p>
+			</div>
+		</div>
+
+		
+		<div class="col-lg-6 col-md-6 col-sm-12">
+			<div id = "bob" class="rounded xx"> 
+<p><strong>Why Is This Important? </strong>    Investing early is always a great idea. You'll have more time to learn, make mistakes, and eventually prosper. Not only will you reach financial stability sooner, but you will be able to pursue your dreams and goals with less 
+fear of losing everything. Additionally, planning for the future will help put your mind at ease and allow you to focus on living in the present. Above all, this website is a great exercise and will help everyone reach their finacnial goals, so they can make their other 
+goals come true.</p>
+			</div>
+		</div>
+
+		
+		<div class="col-lg-6 col-md-6 col-sm-12">
+			<div  class="rounded xx"> 
+<img id = "b" src="https://www.netclipart.com/pp/m/36-363829_ladder-of-success-png-hd-man-walking-up.png" height="100%" width="100%">
+
+			</div>
+		</div>
+
+		
+		<div class="col-lg-6 col-md-6 col-sm-12">
+			<div  class="rounded xx"> 
+<img id = "c" src="https://cdn5.vectorstock.com/i/1000x1000/52/59/black-silhouette-man-sitting-behind-computer-on-a-vector-21085259.jpg" height="100%" width="100%">
+
+			</div>
+		</div>
+
+		
+		<div class="col-lg-6 col-md-6 col-sm-12">
+			<div class="rounded xx"> 
+ <p id = "heyyo"><strong>How Vest-Me Works: </strong> Vest-Me simulates the real world in that it displays the latest data on funds and prices. From there, users can invest in promising companies using mock money. Generated statistics will help users assess their success and how to continue making the most in the least time. Users can use the 'Learn' tab on the navigation bar above to refer and read about investing topics. Users can run up to 3 scenarios simultaneously and see their current values/statistics on their main page. </p>
+			</div>
+		</div>
+
+
+	</div>
+
+
+</body>
+</html>
