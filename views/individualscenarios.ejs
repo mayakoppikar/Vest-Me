@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Vest-Me | SCENARIOS</title>
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 							crossorigin="anonymous">
+	
+		<link rel="shortcut icon" type="image/png" href="https://www.netclipart.com/pp/m/0-575_floral-watercolor-		png-watercolor-flower-png-pink.png">
+		
+		<link href= "/public/assets/styles.css" rel="stylesheet" type="text/css"/>
+		
+		<html lang="en">
+<!-- metadata -->
+		<meta charset="utf-8"/>
+
+		<meta name= description content="Site made to help guide newcomers to finance and investing with a smiple, 		   hands-on scenarios that models the real world!"/> 
+
+		<meta name="keywords" content="finance,student,growth, invest, smart "/>
+			
+		<meta name="author" content="Maya Koppikar" />
+			
+		<meta http-equiv="refresh" content="30">
+			
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				
+				
+</head>
+	
+<body class="bod">
+		
+<!-- nabvar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light navy" id = "heyy">
+		<a  class="navbar-brand"  >
+  		<img src="https://www.netclipart.com/pp/m/0-575_floral-watercolor-png-watercolor-flower-png-pink.png" 			width="30" height="30" alt="" loading="lazy">Vest-Me</a>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+   	   		<ul class="navbar-nav mr-auto">
+      			<li class="nav-item ">
+       				<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      			</li>
+
+      			<li class="nav-item">
+       				<a class="nav-link" href="/about">About</a>
+     			 </li>
+
+     			 <li class="nav-item">
+       			 	<a class="nav-link" href="/learn">Learn</a>
+      			 </li>
+
+				
+				
+
+				<% if(!currentUser){ %>
+
+				 <li id = "signup" class="nav-item">
+        			<a class="nav-link" href="/register">Sign Up</a>
+      			 </li>
+
+				 <li class="nav-item">
+       				<a class="nav-link" href="/login">Login</a>
+      			 </li>
+				<% } else { %>
+				<li id="messa">Signed In As <%= currentUser.username%></li>
+				
+				<li id = "herro" class="nav-item">
+       				<a class="nav-link" href="/mainpage">Mainpage</a>
+      			 </li>
+				
+				
+				
+				<li id = "signout" class="nav-item">
+       				<a class="nav-link" href="/logout">Sign Out</a>
+      			 </li>
+
+				<% } %>
+				
+	
+			</ul>
+			</ul>
+  		</div>
+	</nav>
+	
+			<div class="errorsuccess container">
+
+	<% if(error && error.length > 0){  %>
+					<div class= "alert alert-danger" role="alert">
+					<%= error %>
+						</div>
+	
+	 <% }  %>
+	
+	<% if(success && success.length > 0){  %>
+					<div class= "alert alert-success" role="alert">
+					<%= success %>
+					</div>
+	
+	 <% }  %>
+	
+</div>
+		
+		
+
+		
+		
+		
+
+			<% var currentDate = new Date(); %>
+			<%  var laterdate = scenario.enddate; %>
+			<%  var earlierdate = currentDate; %>
+		
+		
+	
+   <% var difference = laterdate.getTime() - earlierdate.getTime();   %>
+    <% var daysDifference = Math.floor(difference/1000/60/60/24);   %>
+    <% daysDifference = daysDifference + 1; %>
+  
+
+		
+		<p>
+			
+			
+			
+			
+						<p class="elemenopees"><strong>Current Date: </strong><%= datetod %> </p>
+
+		</p>
+
+
+	
+		<div class="container">
+	<button id = "backbuttoners"><a href="/mainpage">Back</a></button>
+		
+		<h4>Current Scenario: </h4>
+		
+		<div class="scenario">
+			
+			
+			<p class="elemenopee"><strong>Starting Value: </strong>$<%= scenario.startval.toFixed(2); %> </p>
+			
+						<p class="elemenopees"><strong>Current Value:</strong>$ <%= scenario.currentVal.toFixed(2); %> </p>
+
+			
+			<p class="elemenopees"><strong>Goal Value: </strong>$<%= scenario.goalval.toFixed(2); %>  </p>
+			<p class="elemenopees"><strong>Start Date: </strong> <%= cd %> </p>
+			<% var l = scenario.enddate.toString(); %>
+			<% var ll = l.slice(0,15); %>
+			<p class="elemenopee"><strong>Investment Horizon:  </strong><%= ll %> </p>
+			<p class="elemenopee"><strong>Time Left: </strong><%= daysDifference %> days</p>
+			<p class="elemenopees"><strong>Net Gain:</strong>$<%= (scenario.currentVal - scenario.startval).toFixed(2); %> </p>
+			<p class="elemenopee"><strong>Amount Left:</strong>$ <%= (scenario.goalval - scenario.currentVal).toFixed(2); %> </p>
+			
+			
+			
+				<button><a href= "/scenario/<%= scenario._id %>/edit">Edit</a></button>
+			
+			
+		</div>
+			
+		
+			
+				<!-- nabvar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-light navy" id = "heyy">
+		
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+   	   		<ul class="navbar-nav mr-auto">
+		
+
+		
+	<div class="container">
+		
+			</ul>
+  		</div>
+	</nav>
+		
+		
+		
+	<h4 id = "chickencurry">Current Investments: <span>  <%= inv.length %></span></h4> 
+			
+			
+		
+			
+			
+		<table>
+						  <tr>
+							<th class="testy">Ticker</th>
+						
+							<th class="testy"># of Units</th>
+							 <th class="testy">Buying Price</th>
+							 <th class="testy">Link</th>
+
+
+
+							
+						  </tr>
+			
+			
+						  
+			
+		<%	for(var i= 0; i< inv.length; i++)  {  %>
+			
+			<% if(!(inv[i].soldorcurrent)) { %>
+			
+			<tr>
+    		
+    				<td class="testy"><%= inv[i].ticker %></td>
+				 
+				<td class="testy"><%= inv[i].numberofshares %></td>
+				<td class="testy">$<%= inv[i].initialprice %></td>
+				<td class="testy"><a class="linky" href=<%= inv[i].link %>>Link</a></td>
+				<td class="testy"><form action= "/scenario/<%= scenario._id %>/investments/<%= inv[i].ticker %>/<%= inv[i].initialprice %>" method= "GET">
+					
+			<button>Sell</button>
+			
+			</form></td>
+				<td class="testy"><form action= "/scenario/<%= scenario._id %>/investment/edit/<%= inv[i]._id %>" method= "GET">
+					
+			<button>Edit</button>
+			
+			</form></td>
+				
+
+
+
+
+		  </tr>
+						
+			<% }   %>
+
+
+		<% }   %>
+			
+			
+			
+			
+					
+					
+						 
+				</table>
+		
+		
+		<h4 id="chickencurrytwo">Previous Investments:</h4>
+		<table>
+			
+			 <tr>
+							<th class="testy">Ticker</th>
+						
+							<th class="testy"># of Units</th>
+							 <th class="testy">Buying Price</th>
+							 <th class="testy">Link</th>
+				 			<th class="testy">Capital Appreciation</th>
+
+				 
+
+						  </tr>
+			
+				
+		<%	for(var i= 0; i< inv.length; i++)  {  %>
+			
+			<% if((inv[i].soldorcurrent)) { %>
+			
+			<% if(((inv[i].sellingprice - inv[i].initialprice) * 100) > 0 ) { %>
+			
+			<tr>
+    		
+    				<td class="testy green"><%= inv[i].ticker %></td>
+				 
+				<td class="testy green"><%= inv[i].numberofshares %></td>
+				<td class="testy green">$<%= inv[i].initialprice %></td>
+				<td class="testy green"><a class="linky" href=<%= inv[i].link %>>Link</a></td>
+				<td class="testy green"><%= ((inv[i].sellingprice - inv[i].initialprice) * 100).toFixed(2); %>%</td>
+
+				
+
+
+
+
+		  </tr>
+						
+			<% }   %>
+			
+			
+			<% if(((inv[i].sellingprice - inv[i].initialprice) * 100) < 0 ) { %>
+			
+			<tr>
+    		
+    				<td class="testy red"><%= inv[i].ticker %></td>
+				 
+				<td class="testy red"><%= inv[i].numberofshares %></td>
+				<td class="testy red">$<%= inv[i].initialprice %></td>
+				<td class="testy red"><a href=<%= inv[i].link %>>Link</a></td>
+				<td class="testy red"><%= ((inv[i].sellingprice - inv[i].initialprice) * 100).toFixed(2); %>%</td>
+
+				
+
+
+
+
+		  </tr>
+						
+			<% }   %>
+			
+			<% if(((inv[i].sellingprice - inv[i].initialprice) * 100) === 0 ) { %>
+			
+			<tr>
+    		
+    				<td class="testy"><%= inv[i].ticker %></td>
+				 
+				<td class="testy"><%= inv[i].numberofshares %></td>
+				<td class="testy">$<%= inv[i].initialprice %></td>
+				<td class="testy"><a class="linky" href=<%= inv[i].link %>>Link</a></td>
+				<td class="testy"><%= ((inv[i].sellingprice - inv[i].initialprice) * 100).toFixed(2); %>%</td>
+
+				
+
+
+
+
+		  </tr>
+						
+			<% }   %>
+			<% }   %>
+
+
+		<% }   %>
+			
+			
+		</table>
+		
+		
+	
+		
+		
+		
+		<!-- table of all investments pulled from real time data, include button to cancel and edit investment -->
+		
+<h4 id="newinvesttitle">
+	New Investment:
+			</h4>					
+		</div>
+		
+		<form action="/scenario/<%= scenario._id %>/investments" method="POST" id="vestnewform">
+	<p><input type="text" name="ticker" placeholder="ticker(ex: HTMX)"></p>
+	<p><input type="text" name="numberofshares" placeholder="number of units(ex: 2)"></p>
+			
+
+			
+			
+<input type="radio" id="manual" name="emailormanual" value="manual">
+<label for="manual">Manual</label><br>
+
+<label for="emailormanual">Email Alerts:</label>
+
+<p><input type="text" name="emailormanual" placeholder="Enter threshold value"></p>
+
+
+
+
+
+	<p><button >Submit</button></p>
+</form>
+			
+			
+		
+		<h6>
+			Click <a class="linky" href="/currentsfunds">here</a> to reserach mutuals funds to invest in...
+			</h6>
+		
+		
+		
+			
+		
+		
+	
+		</body>
+	
+</html>
